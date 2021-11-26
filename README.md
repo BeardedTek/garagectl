@@ -24,117 +24,132 @@ Each time we command the door to to open or close we tell home assistant what ou
 ## Automations
 
     - id: '1637746423040'
-    alias: Garage Door Clicker
-    description: ''
-    trigger:
-    - platform: state
+      alias: Garage Door Clicker
+      description: ''
+      trigger:
+      - platform: state
         entity_id: input_boolean.garage_door_clicker
         from: 'off'
         to: 'on'
-    condition:
-    - condition: state
+      condition:
+      - condition: state
         entity_id: input_boolean.garage_door_clicker_enable
         state: 'on'
-    action:
-    - service: shell_command.garage_clicker
-    - service: input_boolean.turn_off
+      action:
+      - service: shell_command.garage_clicker
+      - service: input_boolean.turn_off
         target:
-        entity_id: input_boolean.garage_door_clicker
-    - wait_for_trigger:
+          entity_id: input_boolean.garage_door_clicker
+      - wait_for_trigger:
         - platform: state
-        entity_id: binary_sensor.garage_door_home_security_intrusion
-    - service: input_boolean.turn_off
+          entity_id: binary_sensor.garage_door_home_security_intrusion
+      - service: input_boolean.turn_off
         target:
-        entity_id: input_boolean.garage_door_clicker
-    mode: single
+          entity_id: input_boolean.garage_door_clicker
+        mode: single
+ 
+ ***
+ 
     - id: '1637786879382'
-    alias: Garage Door Opening
-    description: ''
-    trigger:
-    - platform: webhook
+      alias: Garage Door Opening
+      description: ''
+      trigger:
+      - platform: webhook
         webhook_id: garage_door-opening
-    condition: []
-    action:
-    - service: input_text.set_value
+      condition: []
+      action:
+      - service: input_text.set_value
         target:
-        entity_id: input_text.garage_door_status
+          entity_id: input_text.garage_door_status
         data:
         value: opening
-    mode: single
+      mode: single
+ 
+ ***
+ 
     - id: '1637786916834'
-    alias: Garage Door Closing
-    description: ''
-    trigger:
-    - platform: webhook
+      alias: Garage Door Closing
+      description: ''
+      trigger:
+      - platform: webhook
         webhook_id: garage_door-closing
-    condition: []
-    action:
-    - service: input_text.set_value
+      condition: []
+      action:
+      - service: input_text.set_value
         target:
-        entity_id: input_text.garage_door_status
+          entity_id: input_text.garage_door_status
         data:
         value: closing
-    mode: single
+      mode: single
+ 
+ ***
+ 
     - id: '1637790394588'
-    alias: Garage Door Open
-    description: ''
-    trigger:
-    - platform: state
+      alias: Garage Door Open
+      description: ''
+      trigger:
+      - platform: state
         entity_id: input_boolean.garage_door_open
         from: 'off'
         to: 'on'
-    condition:
-    - condition: state
+      condition:
+      - condition: state
         entity_id: input_boolean.garage_door_clicker_enable
         state: 'on'
-    action:
-    - service: shell_command.garage_open
-    mode: single
+      action:
+      - service: shell_command.garage_open
+      mode: single
+ 
+ ***
+ 
     - id: '1637790430181'
-    alias: Garage Door Close
-    description: ''
-    trigger:
-    - platform: state
+      alias: Garage Door Close
+      description: ''
+      trigger:
+      - platform: state
         entity_id: input_boolean.garage_door_close
         from: 'off'
         to: 'on'
-    condition:
-    - condition: state
+      condition:
+      - condition: state
         entity_id: input_boolean.garage_door_clicker_enable
         state: 'on'
-    action:
-    - service: shell_command.garage_close
-    mode: single
+      action:
+      - service: shell_command.garage_close
+      mode: single
     - id: '1637812007583'
-    alias: Garage Door Enable
-    description: ''
-    trigger:
-    - platform: webhook
+      alias: Garage Door Enable
+      description: ''
+      trigger:
+      - platform: webhook
         webhook_id: garage_door-enabled
-    condition: []
-    action:
-    - service: input_boolean.turn_on
+      condition: []
+      action:
+      - service: input_boolean.turn_on
         target:
         entity_id: input_boolean.garage_door_clicker_enable
-    mode: single
+      mode: single
+ 
+ ***
+ 
     - id: '1637812036975'
-    alias: Garage Door Disable
-    description: ''
-    trigger:
-    - platform: webhook
+      alias: Garage Door Disable
+      description: ''
+      trigger:
+      - platform: webhook
         webhook_id: garage_door-disabled
-    condition: []
-    action:
-    - service: input_boolean.turn_off
+      condition: []
+      action:
+      - service: input_boolean.turn_off
         target:
         entity_id: input_boolean.garage_door_clicker_enable
-    mode: single
+      mode: single
 
 ## shell scripts
 Place these inside your configuration.yml
 
     shell_command:
-    garage_clicker: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?operate=true
-    garage_open: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?function=open
-    garage_close: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?function=close
-    garage_status: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?function=status
+      garage_clicker: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?operate=true
+      garage_open: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?function=open
+      garage_close: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?function=close
+      garage_status: curl -X GET http://<garagectl-url>/cgi-bin/testpy.cgi?function=status
