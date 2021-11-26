@@ -1,0 +1,152 @@
+body{
+    width: auto;
+    height: auto;
+    background-color:#323639;
+}
+
+.menu{
+    display: block;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: black;
+    height: 380px;;
+    width: 380px;;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color:rgb(13, 22, 22);
+}
+
+.status{
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(229, 226, 226);
+}
+
+.usage{
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+    width: auto;
+    height: 260px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(229, 226, 226);
+}
+
+.subtitle{
+    font-weight: bolder;
+}
+
+.command{
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    width: 70px;
+}
+
+.spacer{
+    display: inline-block;
+    width: 5px;
+}
+
+.status:hover{
+    background-color:rgb(255, 194, 179);
+    cursor: pointer;
+}
+
+.status img{
+    display: block;
+    margin: auto;
+    width: auto;
+    height: 70px;
+}
+
+.button_container{
+    margin: 20px;
+    height: 180px;
+}
+
+.button{
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 180;
+    margin: auto;
+    background-color:rgb(229, 226, 226);
+}
+
+.button img{
+    display: block
+    margin: auto;
+    width: 125px;
+    height: auto;
+}
+.button:hover{
+    background-color:rgb(255, 194, 179);
+    cursor: pointer;
+}
+
+.button_up{
+    float:left;
+}
+
+.button_dn{
+    float:right;
+}
+
+.title{
+    height: 40px;
+    color: rgb(229, 226, 226);
+    text-align: center;
+    font-size: 2em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif';
+}
+
+.title img{
+    height: 0.75em;
+    width: auto;
+}
+
+.status1{
+    display: inline-block;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    float: clear;
+    padding-top: 5%;
+    text-align: center;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif';
+}
+
+.footer{
+    display: flex;
+    justify-content: right;
+    width: 90%;
+    color: darkgrey;
+}
+
+.enabled{
+    color: green;
+}
+
+.disabled{
+    color: red;
+    font-weight: bold;
+}
+
+.hidden{
+    display: none;
+}
+

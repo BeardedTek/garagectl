@@ -1,0 +1,50 @@
+body{
+    width: auto;
+    height: auto;
+    background-color:rgb(45, 77, 77);
+}
+
+#menu{
+    display: block;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: black;
+    min-width: 200px;
+    max-width: 400px;
+    min-height: 400px;
+    max-height: 800px;
+    height: auto;
+    margin: auto;
+    background-color:rgb(13, 22, 22);
+}
+
+.button_up{
+    display:inline;
+    float:left;
+    width: 45%;
+    min-height: 200px;
+    max-height: 400px;
+    height: auto;
+    margin: auto;
+    padding: 2%;
+    background-color:rgb(229, 226, 226);
+}
+
+.button_dn{
+    display:inline;
+    float:right;
+    width: 45%;
+    min-height: 200px;
+    max-height: 400px;
+    height: auto;
+    margin: auto;
+    padding: 2%;
+    background-color:rgb(229, 226, 226);
+}
+
+.title{
+    color: rgb(229, 226, 226);
+    text-align: center;
+    font-size: 2em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
